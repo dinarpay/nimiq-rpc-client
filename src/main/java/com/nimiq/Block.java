@@ -1,5 +1,7 @@
 package com.nimiq;
 
+import java.util.List;
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
@@ -38,7 +40,7 @@ public class Block {
     /** User friendly address (NQ-address) of the miner of the block. */
     private String minerAddress;
 
-    /** Block difficulty, encoded as decimal number in string. (TODO) */
+    /** Block difficulty, encoded as decimal number in string. */
     private String difficulty;
 
     /** Hex-encoded value of the extra data field, maximum of 255 bytes. */
@@ -47,17 +49,17 @@ public class Block {
     /** Block size in byte. */
     private int size;
 
-    /** UNIX timestamp of the block */
+    /** UNIX timestamp of the block. */
     private int timestamp;
 
-    /** Number of confirmations of the block */
+    /** Number of confirmations of the block. */
     private int confirmations;
 
     /**
      * Array of transactions. Either represented by the transaction hash or a
      * Transaction object.
      */
-    // TODO private transactions;
+    private List<Transaction> transactions;
 
     public int getNumber() {
         return number;
@@ -171,4 +173,20 @@ public class Block {
         this.confirmations = confirmations;
     }
 
+    public List<Transaction> getTransactions() {
+        return transactions;
+    }
+
+    public void setTransactions(List<Transaction> transactions) {
+        this.transactions = transactions;
+    }
+
+    @Override
+    public String toString() {
+        return "Block [accountHash=" + accountHash + ", bodyHash=" + bodyHash + ", confirmations=" + confirmations
+                + ", difficulty=" + difficulty + ", extraData=" + extraData + ", hash=" + hash + ", miner=" + miner
+                + ", minerAddress=" + minerAddress + ", nonce=" + nonce + ", number=" + number + ", parentHash="
+                + parentHash + ", pow=" + pow + ", size=" + size + ", timestamp=" + timestamp + ", transactions="
+                + transactions + "]";
+    }
 }
