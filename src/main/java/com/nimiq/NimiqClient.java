@@ -5,8 +5,8 @@ import java.util.List;
 /**
  * This class allows to call RPC API of a Nimiq node.
  *
- * @see https://github.com/nimiq/core-js/wiki/JSON-RPC-API
- * @see https://github.com/nimiq/core-js/blob/master/clients/nodejs/modules/JsonRpcServer.js
+ * @see <a href="https://github.com/nimiq/core-js/wiki/JSON-RPC-API">JSON RPC API</a>
+ * @see <a href="https://github.com/nimiq/core-js/blob/master/clients/nodejs/modules/JsonRpcServer.js">JsonRpcServer.js</a>
  */
 public interface NimiqClient {
 

@@ -55,19 +55,18 @@ public class Transaction {
     private int flags;
 
     /**
-     * If transaction has been successfully verified and found valid. <b>Note:</b>
-     * This field only makes sense when the Transaction object was returned by
-     * {@link NimiqClient#getRawTransactionInfo(String)}
+     * Whether this transaction has been successfully verified and found valid.
+     * <b>Note:</b> This field only makes sense when the Transaction object was
+     * returned by {@link NimiqClient#getRawTransactionInfo(String)}
      */
     private boolean valid = true;
 
     /**
-     * If transaction is currently in the mempool. <b>Note:</b> This field only
-     * makes sense when the Transaction object was returned by
+     * Whether this transaction is currently in the mempool. <b>Note:</b> This field
+     * only makes sense when the Transaction object was returned by
      * {@link NimiqClient#getRawTransactionInfo(String)}
-     *
-     * @see https://github.com/nimiq/core-js/issues/529
      */
+    // FIXME: https://github.com/nimiq/core-js/issues/529
     private boolean inMempool;
 
     public Transaction() {
