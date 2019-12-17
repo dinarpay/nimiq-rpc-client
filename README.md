@@ -46,3 +46,7 @@ if (client.consensus() == ConsensusState.ESTABLISHED) {
         block.getNumber(), block.getHash(), block.getMinerAddress(), NimiqUtils.lunasToCoins(balance));
 }
 ```
+
+## Documentation
+
+See /docs or [GitHub Pages](https://tomkha.github.io/nimiq-rpc-client/).
