@@ -11,18 +11,14 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Wallet {
 
-    /** Hex-encoded 20 byte address. */
     private String id;
-
-    /** User friendly address (NQ-address). */
     private String address;
-
-    /** Hex-encoded 32 byte Ed25519 public key. */
     private String publicKey;
-
-    /** Hex-encoded 32 byte Ed25519 private key. */
     private String privateKey;
 
+    /**
+     * @return Hex-encoded 20 byte address.
+     */
     public String getId() {
         return id;
     }
@@ -31,6 +27,9 @@ public class Wallet {
         this.id = id;
     }
 
+    /**
+     * @return User friendly address (NQ-address).
+     */
     public String getAddress() {
         return address;
     }
@@ -39,6 +38,9 @@ public class Wallet {
         this.address = address;
     }
 
+    /**
+     * @return Hex-encoded 32 byte Ed25519 public key.
+     */
     public String getPublicKey() {
         return publicKey;
     }
@@ -47,6 +49,9 @@ public class Wallet {
         this.publicKey = publicKey;
     }
 
+    /**
+     * @return Hex-encoded 32 byte Ed25519 private key.
+     */
     public String getPrivateKey() {
         return privateKey;
     }

@@ -76,7 +76,6 @@
         <artifactId>maven-javadoc-plugin</artifactId>
         <version>3.1.1</version>
         <configuration>
-          <show>private</show>
           <windowtitle>Nimiq RPC Client</windowtitle>
         </configuration>
       </plugin>

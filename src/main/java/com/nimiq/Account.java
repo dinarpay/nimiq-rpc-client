@@ -15,77 +15,30 @@ public class Account {
         BASIC, VESTING, HTLC;
     }
 
-    /** Hex-encoded 20 byte address. */
     private String id;
-
-    /** User friendly address (NQ-address). */
     private String address;
-
-    /** Balance of the account (in smallest unit). */
     private long balance;
-
-    /**
-     * The account type associated with the account (BASIC: 0, VESTING: 1, HTLC: 2).
-     */
     private Type type;
-
     // Vesting contract fields
-
-    /** Hex-encoded 20 byte address of the owner of the vesting contract. */
     private String owner;
-
-    /** User friendly address (NQ-address) of the owner of the vesting contract. */
     private String ownerAddress;
-
-    /** The block that the vesting contracted commenced. */
     private int vestingStart;
-
-    /**
-     * The number of blocks after which some part of the vested funds is released.
-     */
     private int vestingStepBlocks;
-
-    /** The amount (in smallest unit) released every vestingStepBlocks blocks. */
     private long vestingStepAmount;
-
-    /**
-     * The total amount (in smallest unit) that was provided at the contract
-     * creation.
-     */
     private long vestingTotalAmount;
-
     // HTLC fields
-
-    /** Hex-encoded 20 byte address of the sender of the HTLC. */
     private String sender;
-
-    /** User friendly address (NQ-address) of the sender of the HTLC. */
     private String senderAddress;
-
-    /** Hex-encoded 20 byte address of the recipient of the HTLC. */
     private String recipient;
-
-    /** User friendly address (NQ-address) of the recipient of the HTLC. */
     private String recipientAddress;
-
-    /** Hex-encoded 32 byte hash root. */
     private String hashRoot;
-
-    /** Number of hashes this HTLC is split into. */
     private int hashCount;
-
-    /**
-     * Block after which the contract can only be used by the original sender to
-     * recover funds.
-     */
     private int timeout;
-
-    /**
-     * The total amount (in smallest unit) that was provided at the contract
-     * creation.
-     */
     private long totalAmount;
 
+    /**
+     * @return Hex-encoded 20 byte address.
+     */
     public String getId() {
         return id;
     }
@@ -94,6 +47,9 @@ public class Account {
         this.id = id;
     }
 
+    /**
+     * @return User friendly address (NQ-address).
+     */
     public String getAddress() {
         return address;
     }
@@ -102,6 +58,9 @@ public class Account {
         this.address = address;
     }
 
+    /**
+     * @return Balance of the account (in smallest unit).
+     */
     public long getBalance() {
         return balance;
     }
@@ -110,6 +69,10 @@ public class Account {
         this.balance = balance;
     }
 
+    /**
+     * @return The account type associated with the account (BASIC: 0, VESTING: 1,
+     *         HTLC: 2).
+     */
     public Type getType() {
         return type;
     }
@@ -118,6 +81,9 @@ public class Account {
         this.type = type;
     }
 
+    /**
+     * @return Hex-encoded 20 byte address of the owner of the vesting contract.
+     */
     public String getOwner() {
         return owner;
     }
@@ -126,6 +92,10 @@ public class Account {
         this.owner = owner;
     }
 
+    /**
+     * @return User friendly address (NQ-address) of the owner of the vesting
+     *         contract.
+     */
     public String getOwnerAddress() {
         return ownerAddress;
     }
@@ -134,6 +104,9 @@ public class Account {
         this.ownerAddress = ownerAddress;
     }
 
+    /**
+     * @return The block that the vesting contracted commenced.
+     */
     public int getVestingStart() {
         return vestingStart;
     }
@@ -142,6 +115,10 @@ public class Account {
         this.vestingStart = vestingStart;
     }
 
+    /**
+     * @return The number of blocks after which some part of the vested funds is
+     *         released.
+     */
     public int getVestingStepBlocks() {
         return vestingStepBlocks;
     }
@@ -150,6 +127,10 @@ public class Account {
         this.vestingStepBlocks = vestingStepBlocks;
     }
 
+    /**
+     * @return The amount (in smallest unit) released every vestingStepBlocks
+     *         blocks.
+     */
     public long getVestingStepAmount() {
         return vestingStepAmount;
     }
@@ -158,6 +139,10 @@ public class Account {
         this.vestingStepAmount = vestingStepAmount;
     }
 
+    /**
+     * @return The total amount (in smallest unit) that was provided at the contract
+     *         creation.
+     */
     public long getVestingTotalAmount() {
         return vestingTotalAmount;
     }
@@ -166,6 +151,9 @@ public class Account {
         this.vestingTotalAmount = vestingTotalAmount;
     }
 
+    /**
+     * @return Hex-encoded 20 byte address of the sender of the HTLC.
+     */
     public String getSender() {
         return sender;
     }
@@ -174,6 +162,9 @@ public class Account {
         this.sender = sender;
     }
 
+    /**
+     * @return User friendly address (NQ-address) of the sender of the HTLC.
+     */
     public String getSenderAddress() {
         return senderAddress;
     }
@@ -182,6 +173,9 @@ public class Account {
         this.senderAddress = senderAddress;
     }
 
+    /**
+     * @return Hex-encoded 20 byte address of the recipient of the HTLC.
+     */
     public String getRecipient() {
         return recipient;
     }
@@ -190,6 +184,9 @@ public class Account {
         this.recipient = recipient;
     }
 
+    /**
+     * @return User friendly address (NQ-address) of the recipient of the HTLC.
+     */
     public String getRecipientAddress() {
         return recipientAddress;
     }
@@ -198,6 +195,9 @@ public class Account {
         this.recipientAddress = recipientAddress;
     }
 
+    /**
+     * @return Hex-encoded 32 byte hash root.
+     */
     public String getHashRoot() {
         return hashRoot;
     }
@@ -206,6 +206,9 @@ public class Account {
         this.hashRoot = hashRoot;
     }
 
+    /**
+     * @return Number of hashes this HTLC is split into.
+     */
     public int getHashCount() {
         return hashCount;
     }
@@ -214,6 +217,10 @@ public class Account {
         this.hashCount = hashCount;
     }
 
+    /**
+     * @return Block after which the contract can only be used by the original
+     *         sender to recover funds.
+     */
     public int getTimeout() {
         return timeout;
     }
@@ -222,6 +229,10 @@ public class Account {
         this.timeout = timeout;
     }
 
+    /**
+     * @return The total amount (in smallest unit) that was provided at the contract
+     *         creation.
+     */
     public long getTotalAmount() {
         return totalAmount;
     }

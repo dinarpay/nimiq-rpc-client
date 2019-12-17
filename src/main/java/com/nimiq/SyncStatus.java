@@ -11,21 +11,9 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class SyncStatus {
 
-    /**
-     * Whether the node is syncing with the network.
-     */
     private boolean syncing;
-
-    /**
-     * The block at which the import started. (will only be reset, after the sync
-     * reached his head)
-     */
     private int startingBlock;
-
-    /** The current block, same as blockNumber. */
     private int currentBlock;
-
-    /** The estimated highest block. */
     private int highestBlock;
 
     public SyncStatus() {
@@ -36,10 +24,21 @@ public class SyncStatus {
         this.syncing = syncing;
     }
 
+    /**
+     * @return Whether the node is syncing with the network.
+     */
     public boolean isSyncing() {
         return syncing;
     }
 
+    public void setSyncing(boolean syncing) {
+        this.syncing = syncing;
+    }
+
+    /**
+     * @return The block at which the import started. (will only be reset, after the
+     *         sync reached his head)
+     */
     public int getStartingBlock() {
         return startingBlock;
     }
@@ -48,6 +47,9 @@ public class SyncStatus {
         this.startingBlock = startingBlock;
     }
 
+    /**
+     * @return The current block, same as blockNumber.
+     */
     public int getCurrentBlock() {
         return currentBlock;
     }
@@ -56,6 +58,9 @@ public class SyncStatus {
         this.currentBlock = currentBlock;
     }
 
+    /**
+     * @return The estimated highest block.
+     */
     public int getHighestBlock() {
         return highestBlock;
     }

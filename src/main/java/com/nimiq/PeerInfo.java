@@ -60,36 +60,20 @@ public class PeerInfo {
         }
     }
 
-    /** Peer id. */
     private String id;
-
-    /** Peer address. (URL) */
     private String address;
-
-    /** Address state. */
     private AddressState addressState;
-
-    /** Connection state. */
     private ConnectionState connectionState;
-
-    /** Version. */
     private int version;
-
-    /** Time offset. (ms) */
     private long timeOffset;
-
-    /** Hash of the head block the peer is on. */
     private String headHash;
-
-    /** Network latency. (ms) */
     private long latency;
-
-    /** Bytes received. */
     private long rx;
-
-    /** Bytes sent. */
     private long tx;
 
+    /**
+     * @return Peer id.
+     */
     public String getId() {
         return id;
     }
@@ -98,6 +82,9 @@ public class PeerInfo {
         this.id = id;
     }
 
+    /**
+     * @return Peer address. (URL)
+     */
     public String getAddress() {
         return address;
     }
@@ -106,6 +93,9 @@ public class PeerInfo {
         this.address = address;
     }
 
+    /**
+     * @return Address state.
+     */
     public AddressState getAddressState() {
         return addressState;
     }
@@ -114,6 +104,9 @@ public class PeerInfo {
         this.addressState = addressState;
     }
 
+    /**
+     * @return Connection state.
+     */
     public ConnectionState getConnectionState() {
         return connectionState;
     }
@@ -122,6 +115,9 @@ public class PeerInfo {
         this.connectionState = connectionState;
     }
 
+    /**
+     * @return Version.
+     */
     public int getVersion() {
         return version;
     }
@@ -130,6 +126,9 @@ public class PeerInfo {
         this.version = version;
     }
 
+    /**
+     * @return Time offset. (in milliseconds)
+     */
     public long getTimeOffset() {
         return timeOffset;
     }
@@ -138,6 +137,9 @@ public class PeerInfo {
         this.timeOffset = timeOffset;
     }
 
+    /**
+     * @return Hash of the head block the peer is on.
+     */
     public String getHeadHash() {
         return headHash;
     }
@@ -146,6 +148,9 @@ public class PeerInfo {
         this.headHash = headHash;
     }
 
+    /**
+     * @return Network latency. (in milliseconds)
+     */
     public long getLatency() {
         return latency;
     }
@@ -154,6 +159,9 @@ public class PeerInfo {
         this.latency = latency;
     }
 
+    /**
+     * @return Bytes received.
+     */
     public long getRx() {
         return rx;
     }
@@ -162,6 +170,9 @@ public class PeerInfo {
         this.rx = rx;
     }
 
+    /**
+     * @return Bytes sent.
+     */
     public long getTx() {
         return tx;
     }

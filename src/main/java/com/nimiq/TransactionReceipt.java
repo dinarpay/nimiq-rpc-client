@@ -11,27 +11,16 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class TransactionReceipt {
 
-    /** Hex-encoded hash of the transaction. */
     private String transactionHash;
-
-    /** The transactions index position in the block. */
     private int transactionIndex;
-
-    /** Hex-encoded hash of the block where this transaction was in. */
     private String blockHash;
-
-    /** Block number where this transaction was in. */
     private int blockNumber;
-
-    /**
-     * Number of confirmations for this transaction (number of blocks on top of the
-     * block where this transaction was in).
-     */
     private int confirmations;
-
-    /** Timestamp of the block where this transaction was in. */
     private int timestamp;
 
+    /**
+     * @return Hex-encoded hash of the transaction.
+     */
     public String getTransactionHash() {
         return transactionHash;
     }
@@ -40,6 +29,9 @@ public class TransactionReceipt {
         this.transactionHash = transactionHash;
     }
 
+    /**
+     * @return The transactions index position in the block.
+     */
     public int getTransactionIndex() {
         return transactionIndex;
     }
@@ -48,6 +40,9 @@ public class TransactionReceipt {
         this.transactionIndex = transactionIndex;
     }
 
+    /**
+     * @return Hex-encoded hash of the block where this transaction was in.
+     */
     public String getBlockHash() {
         return blockHash;
     }
@@ -56,6 +51,9 @@ public class TransactionReceipt {
         this.blockHash = blockHash;
     }
 
+    /**
+     * @return Block number where this transaction was in.
+     */
     public int getBlockNumber() {
         return blockNumber;
     }
@@ -64,6 +62,10 @@ public class TransactionReceipt {
         this.blockNumber = blockNumber;
     }
 
+    /**
+     * @return Number of confirmations for this transaction (number of blocks on top
+     *         of the block where this transaction was in).
+     */
     public int getConfirmations() {
         return confirmations;
     }
@@ -72,6 +74,9 @@ public class TransactionReceipt {
         this.confirmations = confirmations;
     }
 
+    /**
+     * @return Timestamp of the block where this transaction was in.
+     */
     public int getTimestamp() {
         return timestamp;
     }

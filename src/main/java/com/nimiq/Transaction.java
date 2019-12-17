@@ -12,62 +12,23 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Transaction {
 
-    /** Hex-encoded hash of the transaction. */
     private String hash;
-
-    /** Hex-encoded hash of the block containing the transaction. */
     private String blockHash;
-
-    /** Height of the block containing the transaction. */
     private int blockNumber;
-
-    /** UNIX timestamp of the block containing the transaction. */
     private int timestamp;
-
-    /** Number of confirmations of the block containing the transaction. */
     private int confirmations;
-
-    /** Index of the transaction in the block. */
     private int transactionIndex;
-
-    /** Hex-encoded address of the sending account. */
     private String from;
-
-    /** Nimiq user friendly address (NQ-address) of the sending account. */
     private String fromAddress;
-
-    /** Hex-encoded address of the recipient account. */
     private String to;
-
-    /** Nimiq user friendly address (NQ-address) of the recipient account. */
     private String toAddress;
-
-    /** Integer of the value (in smallest unit) sent with this transaction. */
     private long value;
-
-    /** Integer of the fee (in smallest unit) for this transaction. */
     private long fee;
-
-    /** Hex-encoded contract parameters or a message. */
     private String data;
-
-    /** Bit-encoded transaction flags. */
     private int flags;
 
-    /**
-     * Whether this transaction has been successfully verified and found valid.
-     * <b>Note:</b> This field only makes sense when the Transaction object was
-     * returned by {@link NimiqClient#getRawTransactionInfo(String)}
-     */
     private boolean valid = true;
-
-    /**
-     * Whether this transaction is currently in the mempool. <b>Note:</b> This field
-     * only makes sense when the Transaction object was returned by
-     * {@link NimiqClient#getRawTransactionInfo(String)}
-     */
-    // FIXME: https://github.com/nimiq/core-js/issues/529
-    private boolean inMempool;
+    private boolean inMempool; // FIXME: https://github.com/nimiq/core-js/issues/529
 
     public Transaction() {
     }
@@ -76,6 +37,9 @@ public class Transaction {
         this.hash = hash;
     }
 
+    /**
+     * @return Hex-encoded hash of the transaction.
+     */
     public String getHash() {
         return hash;
     }
@@ -84,6 +48,9 @@ public class Transaction {
         this.hash = hash;
     }
 
+    /**
+     * @return Hex-encoded hash of the block containing the transaction.
+     */
     public String getBlockHash() {
         return blockHash;
     }
@@ -92,6 +59,9 @@ public class Transaction {
         this.blockHash = blockHash;
     }
 
+    /**
+     * @return Height of the block containing the transaction.
+     */
     public int getBlockNumber() {
         return blockNumber;
     }
@@ -100,6 +70,9 @@ public class Transaction {
         this.blockNumber = blockNumber;
     }
 
+    /**
+     * @return UNIX timestamp of the block containing the transaction.
+     */
     public int getTimestamp() {
         return timestamp;
     }
@@ -108,6 +81,9 @@ public class Transaction {
         this.timestamp = timestamp;
     }
 
+    /**
+     * @return Number of confirmations of the block containing the transaction.
+     */
     public int getConfirmations() {
         return confirmations;
     }
@@ -116,6 +92,9 @@ public class Transaction {
         this.confirmations = confirmations;
     }
 
+    /**
+     * @return Index of the transaction in the block.
+     */
     public int getTransactionIndex() {
         return transactionIndex;
     }
@@ -124,6 +103,9 @@ public class Transaction {
         this.transactionIndex = transactionIndex;
     }
 
+    /**
+     * @return Hex-encoded address of the sending account.
+     */
     public String getFrom() {
         return from;
     }
@@ -132,6 +114,9 @@ public class Transaction {
         this.from = from;
     }
 
+    /**
+     * @return Nimiq user friendly address (NQ-address) of the sending account.
+     */
     public String getFromAddress() {
         return fromAddress;
     }
@@ -140,6 +125,9 @@ public class Transaction {
         this.fromAddress = fromAddress;
     }
 
+    /**
+     * @return Hex-encoded address of the recipient account.
+     */
     public String getTo() {
         return to;
     }
@@ -148,6 +136,9 @@ public class Transaction {
         this.to = to;
     }
 
+    /**
+     * @return Nimiq user friendly address (NQ-address) of the recipient account.
+     */
     public String getToAddress() {
         return toAddress;
     }
@@ -156,6 +147,9 @@ public class Transaction {
         this.toAddress = toAddress;
     }
 
+    /**
+     * @return Integer of the value (in smallest unit) sent with this transaction.
+     */
     public long getValue() {
         return value;
     }
@@ -164,6 +158,9 @@ public class Transaction {
         this.value = value;
     }
 
+    /**
+     * @return Integer of the fee (in smallest unit) for this transaction.
+     */
     public long getFee() {
         return fee;
     }
@@ -172,6 +169,9 @@ public class Transaction {
         this.fee = fee;
     }
 
+    /**
+     * @return Hex-encoded contract parameters or a message.
+     */
     public String getData() {
         return data;
     }
@@ -180,6 +180,9 @@ public class Transaction {
         this.data = data;
     }
 
+    /**
+     * @return Bit-encoded transaction flags.
+     */
     public int getFlags() {
         return flags;
     }
@@ -188,6 +191,12 @@ public class Transaction {
         this.flags = flags;
     }
 
+    /**
+     * @return Whether this transaction has been successfully verified and found
+     *         valid. <b>Note:</b> This field only makes sense when the Transaction
+     *         object was returned by
+     *         {@link NimiqClient#getRawTransactionInfo(String)}
+     */
     public boolean isValid() {
         return valid;
     }
@@ -196,6 +205,11 @@ public class Transaction {
         this.valid = valid;
     }
 
+    /**
+     * @return Whether this transaction is currently in the mempool. <b>Note:</b>
+     *         This field only makes sense when the Transaction object was returned
+     *         by {@link NimiqClient#getRawTransactionInfo(String)}
+     */
     public boolean isInMempool() {
         return inMempool;
     }

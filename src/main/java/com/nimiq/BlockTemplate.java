@@ -17,24 +17,16 @@ public class BlockTemplate {
     @JsonIgnoreProperties(ignoreUnknown = true)
     public static class Header {
 
-        /** Version in block header. */
         private int version;
-
-        /** 32-byte hex-encoded hash of the previous block. */
         private String prevHash;
-
-        /** 32-byte hex-encoded hash of the interlink. */
         private String interlinkHash;
-
-        /** 32-byte hex-encoded hash of the accounts tree. */
         private String accountsHash;
-
-        /** Compact form of the hash target for this block. */
         private int nBits;
-
-        /** Height of the block in the block chain (also known as block number). */
         private int height;
 
+        /**
+         * @return Version in block header.
+         */
         public int getVersion() {
             return version;
         }
@@ -43,6 +35,9 @@ public class BlockTemplate {
             this.version = version;
         }
 
+        /**
+         * @return 32-byte hex-encoded hash of the previous block.
+         */
         public String getPrevHash() {
             return prevHash;
         }
@@ -51,6 +46,9 @@ public class BlockTemplate {
             this.prevHash = prevHash;
         }
 
+        /**
+         * @return 32-byte hex-encoded hash of the interlink.
+         */
         public String getInterlinkHash() {
             return interlinkHash;
         }
@@ -59,6 +57,9 @@ public class BlockTemplate {
             this.interlinkHash = interlinkHash;
         }
 
+        /**
+         * @return 32-byte hex-encoded hash of the accounts tree.
+         */
         public String getAccountsHash() {
             return accountsHash;
         }
@@ -67,6 +68,9 @@ public class BlockTemplate {
             this.accountsHash = accountsHash;
         }
 
+        /**
+         * @return Compact form of the hash target for this block.
+         */
         public int getnBits() {
             return nBits;
         }
@@ -75,6 +79,9 @@ public class BlockTemplate {
             this.nBits = nBits;
         }
 
+        /**
+         * @return Height of the block in the block chain (also known as block number).
+         */
         public int getHeight() {
             return height;
         }
@@ -94,27 +101,16 @@ public class BlockTemplate {
     @JsonIgnoreProperties(ignoreUnknown = true)
     public static class Body {
 
-        /** 32-byte hex-encoded hash of the block body. */
         private String hash;
-
-        /** 20-byte hex-encoded miner address. */
         private String minerAddr;
-
-        /** Hex-encoded value of the extra data field. */
         private String extraData;
-
-        /** Array of hex-encoded transactions for this block. */
         private String[] transactions;
-
-        /** Array of hex-encoded pruned accounts for this block. */
         private String[] prunedAccounts;
-
-        /**
-         * Array of hex-encoded hashes that verify the path of the miner address in the
-         * merkle tree. This can be used to change the miner address easily.
-         */
         private String[] merkleHashes;
 
+        /**
+         * @return 32-byte hex-encoded hash of the block body.
+         */
         public String getHash() {
             return hash;
         }
@@ -123,6 +119,9 @@ public class BlockTemplate {
             this.hash = hash;
         }
 
+        /**
+         * @return 20-byte hex-encoded miner address.
+         */
         public String getMinerAddr() {
             return minerAddr;
         }
@@ -131,6 +130,9 @@ public class BlockTemplate {
             this.minerAddr = minerAddr;
         }
 
+        /**
+         * @return Hex-encoded value of the extra data field.
+         */
         public String getExtraData() {
             return extraData;
         }
@@ -139,6 +141,9 @@ public class BlockTemplate {
             this.extraData = extraData;
         }
 
+        /**
+         * @return Array of hex-encoded transactions for this block.
+         */
         public String[] getTransactions() {
             return transactions;
         }
@@ -147,6 +152,9 @@ public class BlockTemplate {
             this.transactions = transactions;
         }
 
+        /**
+         * @return Array of hex-encoded pruned accounts for this block.
+         */
         public String[] getPrunedAccounts() {
             return prunedAccounts;
         }
@@ -155,6 +163,11 @@ public class BlockTemplate {
             this.prunedAccounts = prunedAccounts;
         }
 
+        /**
+         * @return Array of hex-encoded hashes that verify the path of the miner address
+         *         in the merkle tree. This can be used to change the miner address
+         *         easily.
+         */
         public String[] getMerkleHashes() {
             return merkleHashes;
         }
@@ -171,18 +184,14 @@ public class BlockTemplate {
         }
     }
 
-    /** Block header. */
     private Header header;
-
-    /** Hex-encoded block interlink. */
     private String interlink;
-
-    /** Block body. */
     private Body body;
-
-    /** Compact form of the hash target to submit a block to this client. */
     private int target;
 
+    /**
+     * @return Block header.
+     */
     public Header getHeader() {
         return header;
     }
@@ -191,6 +200,9 @@ public class BlockTemplate {
         this.header = header;
     }
 
+    /**
+     * @return Hex-encoded block interlink.
+     */
     public String getInterlink() {
         return interlink;
     }
@@ -199,6 +211,9 @@ public class BlockTemplate {
         this.interlink = interlink;
     }
 
+    /**
+     * @return Block body.
+     */
     public Body getBody() {
         return body;
     }
@@ -207,6 +222,9 @@ public class BlockTemplate {
         this.body = body;
     }
 
+    /**
+     * @return Compact form of the hash target to submit a block to this client.
+     */
     public int getTarget() {
         return target;
     }

@@ -11,33 +11,17 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class OutgoingTransaction {
 
-    /** The address the transaction is send from. */
     private String from;
-
-    /**
-     * (optional, default: 0, Account.Type.BASIC) The account type at the given
-     * address (BASIC: 0, VESTING: 1, HTLC: 2).
-     */
     private Account.Type fromType;
-
-    /** The address the transaction is directed to. */
     private String to;
-
-    /**
-     * (optional, default: 0, Account.Type.BASIC) The account type at the given
-     * address (BASIC: 0, VESTING: 1, HTLC: 2).
-     */
     private Account.Type toType;
-
-    /** Integer of the value (in smallest unit) sent with this transaction. */
     private long value;
-
-    /** Integer of the fee (in smallest unit) for this transaction. */
     private long fee;
-
-    /** Hex-encoded contract parameters or a message. */
     private String data;
 
+    /**
+     * @return The address the transaction is send from.
+     */
     public String getFrom() {
         return from;
     }
@@ -46,6 +30,10 @@ public class OutgoingTransaction {
         this.from = from;
     }
 
+    /**
+     * @return (optional, default: 0, Account.Type.BASIC) The account type at the
+     *         given address (BASIC: 0, VESTING: 1, HTLC: 2).
+     */
     public Account.Type getFromType() {
         return fromType;
     }
@@ -54,6 +42,9 @@ public class OutgoingTransaction {
         this.fromType = fromType;
     }
 
+    /**
+     * @return The address the transaction is directed to.
+     */
     public String getTo() {
         return to;
     }
@@ -62,6 +53,10 @@ public class OutgoingTransaction {
         this.to = to;
     }
 
+    /**
+     * @return (optional, default: 0, Account.Type.BASIC) The account type at the
+     *         given address (BASIC: 0, VESTING: 1, HTLC: 2).
+     */
     public Account.Type getToType() {
         return toType;
     }
@@ -70,6 +65,9 @@ public class OutgoingTransaction {
         this.toType = toType;
     }
 
+    /**
+     * @return Integer of the value (in smallest unit) sent with this transaction.
+     */
     public long getValue() {
         return value;
     }
@@ -78,6 +76,9 @@ public class OutgoingTransaction {
         this.value = value;
     }
 
+    /**
+     * @return Integer of the fee (in smallest unit) for this transaction.
+     */
     public long getFee() {
         return fee;
     }
@@ -86,6 +87,9 @@ public class OutgoingTransaction {
         this.fee = fee;
     }
 
+    /**
+     * @return Hex-encoded contract parameters or a message.
+     */
     public String getData() {
         return data;
     }
