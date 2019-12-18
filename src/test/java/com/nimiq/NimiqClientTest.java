@@ -207,8 +207,7 @@ public class NimiqClientTest {
         assertEquals(BLOCK_NUMBER, receipt.getBlockNumber());
         assertEquals(BLOCK_HASH, receipt.getBlockHash());
         assertEquals(TX1_HASH, receipt.getTransactionHash());
-        // FIXME: https://github.com/nimiq/core-js/issues/528
-        assertEquals(-1, receipt.getTransactionIndex());
+        assertEquals(0, receipt.getTransactionIndex());
     }
 
     @Test
